@@ -1,0 +1,33 @@
+ansible demo -a "sudo yum install httpd -y"
+    4  exit
+    5  ansible demo -m ping
+    6  exit
+    7  ssh key-gen
+    8  exit
+    9  ansible demo -a "systemctl status httpd"
+   10  ansible demo -b -a "yum remove httpd"
+   11  ansible demo -a "sudo yum remove httpd"
+   12  ansible demo -b -a "yum install httpd"
+   13  ansible demo -a "sudo yum install httpd"
+   14  exit
+   15  ansible demo -b -a "yum install httpd"
+   16  ansible demo -m ping
+   17  ansible demo -a "sudo which httpd"
+   18  ansible demo -a "sudo yum remove httpd"
+   19  exit
+   20  ansible demo -b -m user -a "name=sulo state=present"
+   21  ansible demo -b -a "cat /etc/passwd"
+   22  ansible demo -b -m user -a "name=sulo state=absent"
+   23  ansible demo -b -m group -a "name=devops state=present"
+   24  ansible demo -b -a "cat /etc/group"
+   25  ansible demo -b -m group -a "name=devops state=absent"
+   26  ansible demo -b -m file -a "path=/home/ansible/demo state=directory"
+   27  ansible demo -b -m file -a "path=/home/ansible/demo state=absent"
+   28  ansible demo -b -m file -a "path=/home/ansible/demo state=directory mode=0755"
+   29  ansible demo -b -m file -a "path=/home/ansible/demo state=absent mode=0755"
+   30  ansible demo -b -m file -a "path=/home/ansible/jsp.txt state=touch"
+   31* ansible demo -b -m file -a "path=/home/ansible/jsp.txt state=absent"
+   32  ansible demo -b -m file -a "path=/home/ansible/jsp.txt state=touch mode=0755"
+   33  touch soumya.txt
+   34  ansible demo -b -m copy -a "path=/home/ansible/sulo.txt dest=/home/ansible"
+   35  ansible demo -b -m copy -a "src=/home/ansible/sulo.txt dest=/home/ansible"
